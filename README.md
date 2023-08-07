@@ -5,3 +5,5 @@
 目前最新版本：MayDOS_v0.5.3
 
 [戳我下载](https://github.com/MayDOS-Team/MayDOS/releases/download/MayDOS_v0.5.3/MayDOS_v0.5.3.zip)
+
+或者看看[源代码](https://github.com/MayDOS-Team/MayDOS)
