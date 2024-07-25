@@ -2,7 +2,7 @@
 
 **欢迎来到MayDOS的备份网站**
 
-目前最新版本：**MayDOS_v0.7.3**
+目前最新版本：**MayDOS_v0.9.0**
 
 [戳我下载](https://github.com/MayDOS-Team/MayDOS/releases/)
 
