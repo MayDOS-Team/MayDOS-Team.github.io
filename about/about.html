@@ -15,7 +15,7 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <h1 style="color: lightskyblue;text-align: center;"><code>MayDos 官方下载站</code></h1>
+        <h1 style="color: lightskyblue;text-align: center;"><code>MayDOS 官方下载站</code></h1>
         <HR>
         <table align="center">
 	        <tr>
@@ -26,19 +26,41 @@
         <HR>
         <h2>关于MayDOS</h2>
         <hr>
-        <p>这是一个使用py编写而成的虚拟磁盘操作系统 ,代码行数超过600+.如果您对我们的项目感兴趣,可以关注我们的<a href="https://space.bilibili.com/3493262897711201">Biliili</a>或者<a href="https://github.com/MayDOS-Team/.github/blob/main">Youtube</a>.如果您想参与开发,详见<a href="#1">#关于我们 & 加入我们</a></p>
+        <p>这是一个使用 Python 编写而成的虚拟磁盘操作系统，代码行数超过 1200 行。如果您对我们的项目感兴趣，可以关注我们的<a href="https://space.bilibili.com/3493262897711201">Biliili</a>或者<a href="https://github.com/MayDOS-Team/.github/blob/main">Youtube</a>。如果您想参与开发,详见<a href="#1">#关于我们 & 加入我们</a></p>
         <h2>获取帮助</h2>
         <hr>
-        <p>如果您有任何疑问,可以到我们的Wiki中寻找答案,绝大多数的问题都可以才Wiki中找到答案.我们的Wiki适用于任何人(7+),不论您是谁,都可以才我们的Wik中找到一些有用的信息.比如您是程序员,您就可以在Wiki找到系统架构栏目以查询</p>
+        <p>如果您有任何疑问，都可以到我们的Wiki中寻找答案,绝大多数的问题都可以在Wiki中找到答案。我们的Wiki适用于任何人(7+)，不论您是谁，都可以在我们的Wiki中找到一些有用的信息。比如您是程序员，您就可以在Wiki找到系统架构栏目查询。</p>
         <hr>
         <h2>近期更新动态</h2>
-        <p style="color: gray;">MayDOS 1.1.2:</p>
-        <p style="color: gray;">| 加入命令"ls"，可以列出一个文件夹内所有文件（包括文件夹）</p>
-        <p style="color: gray;">| 加入命令"sudo su"，可以将当前用户切换为Root用户</p>
-        <p style="color: gray;">| 修改了命令行界面</p>
-        <p style="color: gray;">| 修改了一些冗余代码</p>
-        <p style="color: gray;">| 删除了自动更新函数</p>
-        <p style="color: gray;">| 移除了him</p>
+        <p>MayDOS 1.1.5:</p>
+        <p style="color: gray;">| 添加了数个命令，如下：</p>
+        <p style="color: gray;">|     命令touch，用于新建空文件</p>
+        <p style="color: gray;">|     命令rename，用于重命名文件</p>
+        <p style="color: gray;">|     命令mv，用于移动文件/文件夹</p>
+        <p style="color: gray;">|     命令sh，用于运行shell脚本</p>
+        <p style="color: gray;">|     命令sudo，用于以root用户身份运行一个程序（需要密码）</p>
+        <p style="color: gray;">|     命令pwd，用于查看当前工作目录</p>
+        <p style="color: gray;">|     命令md，用于新建一个空文件夹</p>
+        <p style="color: gray;">|     命令echo，用于显示一条消息</p>
+        <p style="color: gray;">|     命令man，用于查看命令的详细介绍与用法</p>
+        <p style="color: gray;">|     命令apt，用于更好的管理软件包</p>
+        <p style="color: gray;">| 删除了命令add</p>
+        <p style="color: gray;">| 删除了命令sudo su，可以通过使用sudo命令+参数su实现</p>
+        <p style="color: gray;">| 添加了shell功能，目前有函数、注释、变量、条件判断、正常执行命令的功能</p>
+        <p style="color: gray;">| 添加了软件MayVim</p>
+        <p style="color: gray;">| 修改了文件结构</p>
+        <p style="color: gray;">| cat新增了颜色高亮功能</p>
+        <p style="color: gray;">| 规定根目录（/）为程序运行目录，家目录（~）为Home目录</p>
+        <p style="color: gray;">| 重构MayDOS，包括以下内容：</p>
+        <p style="color: gray;">|     弃用了match-case结构，使低版本python也可运行</p>
+        <p style="color: gray;">|     使用函数管理每个命令</p>
+        <p style="color: gray;">|     使用函数运行命令</p>
+        <p style="color: gray;">| 修复了数个bug，包括但不限于：</p>
+        <p style="color: gray;">|     notepad无法正常保存</p>
+        <p style="color: gray;">|     图标与usebook显示过高</p>
+        <p style="color: gray;">|     cd后无法显示路径</p>
+        <p style="color: gray;">|     register与su无法使用</p>
+        <p style="color: gray;">| 命令不再允许大写了，但路径等可以大小写混用</p>
         <h2 id="1">关于我们&加入我们</h2>
         <hr>
         <p>MayDOS开发者群聊(QQ): <a href="">158386162</a></p>
