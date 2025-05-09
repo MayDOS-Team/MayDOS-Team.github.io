@@ -1,68 +1,415 @@
-<!Doctype HTML>
-<html>
-    <head>
-        <title>MayDOS|关于</title>
-        <style>
-            td {
-                border-radius: 5px;
-                text-align: center;
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MayDOS | 关于</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 共用样式与首页相同 */
+        :root {
+            --primary: #2196F3;
+            --primary-light: #BBDEFB;
+            --primary-dark: #1976D2;
+            --secondary: #FF9800;
+            --background: #FAFAFA;
+            --surface: #FFFFFF;
+            --error: #F44336;
+            --on-primary: #000000;
+            --on-secondary: #000000;
+            --on-background: #212121;
+            --on-surface: #212121;
+            --on-error: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background);
+            color: var(--on-background);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--on-primary);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-radius: 0 0 10px 10px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .nav-item {
+            margin: 0 15px;
+            position: relative;
+        }
+        
+        .nav-item a {
+            color: var(--on-primary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .nav-item a:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .nav-item a:active {
+            transform: translateY(0);
+        }
+        
+        .nav-item a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: all 0.3s;
+        }
+        
+        .nav-item a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        .card {
+            background-color: var(--surface);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--on-primary);
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 10px 5px;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--on-secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #FB8C00;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: var(--on-background);
+            font-size: 0.9rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
-            a {
-                color: blue;
-                text-decoration: none;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
-        </style>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <h1 style="color: lightskyblue;text-align: center;"><code>MayDOS 官方下载站</code></h1>
-        <HR>
-        <table align="center">
-	        <tr>
-		        <td height="50" width="250"><a href="../index.html">首页</a></td>
-		        <td height="50" width="250"><a href="../download/download.html">下载</a></td>
-		        <td height="50" width="250"><a href="../about/about.html">关于</a></td>
-        </table>
-        <HR>
-        <h2>关于MayDOS</h2>
-        <hr>
-        <p>这是一个使用 Python 编写而成的虚拟磁盘操作系统，代码行数超过 1200 行。如果您对我们的项目感兴趣，可以关注我们的<a href="https://space.bilibili.com/3493262897711201">Bilibili</a>或者<a href="https://github.com/MayDOS-Team/.github/blob/main">Youtube</a>。如果您想参与开发,详见<a href="#1">#关于我们 & 加入我们</a></p>
-        <h2>获取帮助</h2>
-        <hr>
-        <p>如果您有任何疑问，都可以到我们的Wiki中寻找答案,绝大多数的问题都可以在Wiki中找到答案。我们的Wiki适用于任何人(7+)，不论您是谁，都可以在我们的Wiki中找到一些有用的信息。比如您是程序员，您就可以在Wiki找到系统架构栏目查询。</p>
-        <hr>
-        <h2>近期更新动态</h2>
-        <p>MayDOS 1.1.5:</p>
-        <p style="color: gray;">| 添加了数个命令，如下：</p>
-        <p style="color: gray;">|     命令touch，用于新建空文件</p>
-        <p style="color: gray;">|     命令rename，用于重命名文件</p>
-        <p style="color: gray;">|     命令mv，用于移动文件/文件夹</p>
-        <p style="color: gray;">|     命令sh，用于运行shell脚本</p>
-        <p style="color: gray;">|     命令sudo，用于以root用户身份运行一个程序（需要密码）</p>
-        <p style="color: gray;">|     命令pwd，用于查看当前工作目录</p>
-        <p style="color: gray;">|     命令md，用于新建一个空文件夹</p>
-        <p style="color: gray;">|     命令echo，用于显示一条消息</p>
-        <p style="color: gray;">|     命令man，用于查看命令的详细介绍与用法</p>
-        <p style="color: gray;">|     命令apt，用于更好的管理软件包</p>
-        <p style="color: gray;">| 删除了命令add</p>
-        <p style="color: gray;">| 删除了命令sudo su，可以通过使用sudo命令+参数su实现</p>
-        <p style="color: gray;">| 添加了shell功能，目前有函数、注释、变量、条件判断、正常执行命令的功能</p>
-        <p style="color: gray;">| 添加了软件MayVim</p>
-        <p style="color: gray;">| 修改了文件结构</p>
-        <p style="color: gray;">| cat新增了颜色高亮功能</p>
-        <p style="color: gray;">| 规定根目录（/）为程序运行目录，家目录（~）为Home目录</p>
-        <p style="color: gray;">| 重构MayDOS，包括以下内容：</p>
-        <p style="color: gray;">|     弃用了match-case结构，使低版本python也可运行</p>
-        <p style="color: gray;">|     使用函数管理每个命令</p>
-        <p style="color: gray;">|     使用函数运行命令</p>
-        <p style="color: gray;">| 修复了数个bug，包括但不限于：</p>
-        <p style="color: gray;">|     notepad无法正常保存</p>
-        <p style="color: gray;">|     图标与usebook显示过高</p>
-        <p style="color: gray;">|     cd后无法显示路径</p>
-        <p style="color: gray;">|     register与su无法使用</p>
-        <p style="color: gray;">| 命令不再允许大写了，但路径等可以大小写混用</p>
-        <h2 id="1">关于我们&加入我们</h2>
-        <hr>
-        <p>MayDOS开发者群聊(QQ): <a href="">158386162</a></p>
-    </body>
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ripple:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(10, 10);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+        }
+        
+        .ripple:active:after {
+            transform: scale(0, 0);
+            opacity: 0.3;
+            transition: 0s;
+        }
+        
+        /* 关于页面特有样式 */
+        .section-title {
+            color: var(--primary-dark);
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-light);
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .update-item {
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid var(--secondary);
+            background-color: rgba(251, 192, 45, 0.1);
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .update-item:hover {
+            background-color: rgba(251, 192, 45, 0.2);
+        }
+        
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: var(--surface);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--on-surface);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .social-link i {
+            margin-right: 8px;
+        }
+        
+        .qq-group {
+            background-color: #12B7F5;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .qq-group:hover {
+            background-color: #0E9CD8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="material-icons" style="vertical-align: middle;">info</i> MayDOS 关于</h1>
+            <p>了解更多关于我们的项目</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-item">
+            <a href="../index.html" class="ripple">首页</a>
+        </div>
+        <div class="nav-item">
+            <a href="../download/download.html" class="ripple">下载</a>
+        </div>
+        <div class="nav-item">
+            <a href="about.html" class="ripple">关于</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="card">
+            <h2 class="section-title">关于MayDOS</h2>
+            <p>这是一个使用 Python 编写而成的虚拟磁盘操作系统，代码行数超过 1200 行。如果您对我们的项目感兴趣，可以关注我们的社交媒体：</p>
+            
+            <div class="social-links">
+                <a href="https://space.bilibili.com/3493262897711201" class="social-link ripple" target="_blank">
+                    <i class="material-icons">play_circle_filled</i> Bilibili
+                </a>
+                <a href="https://github.com/MayDOS-Team/.github/blob/main" class="social-link ripple" target="_blank">
+                    <i class="material-icons">play_circle_filled</i> YouTube
+                </a>
+            </div>
+            
+            <p>如果您想参与开发，欢迎加入我们的开发者社区。</p>
+        </div>
+        
+        <div class="card">
+            <h2 class="section-title">获取帮助</h2>
+            <p>如果您有任何疑问，都可以到我们的Wiki中寻找答案,绝大多数的问题都可以在Wiki中找到答案。我们的Wiki适用于任何人(7+)，不论您是谁，都可以在我们的Wiki中找到一些有用的信息。比如您是程序员，您就可以在Wiki找到系统架构栏目查询。</p>
+        </div>
+        
+        <div class="card">
+            <h2 class="section-title">近期更新动态</h2>
+            <p>MayDOS 1.1.5:</p>
+            
+            <div class="update-item">
+                <p><strong>新增命令:</strong></p>
+                <p>• touch - 用于新建空文件</p>
+                <p>• rename - 用于重命名文件</p>
+                <p>• mv - 用于移动文件/文件夹</p>
+                <p>• sh - 用于运行shell脚本</p>
+                <p>• sudo - 以root用户身份运行程序（需要密码）</p>
+            </div>
+            
+            <div class="update-item">
+                <p><strong>其他改进:</strong></p>
+                <p>• 添加了shell功能（函数、注释、变量、条件判断）</p>
+                <p>• 添加了软件MayVim</p>
+                <p>• 修改了文件结构</p>
+                <p>• cat新增了颜色高亮功能</p>
+                <p>• 重构MayDOS代码结构</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2 id="1" class="section-title">关于我们 & 加入我们</h2>
+            <p>欢迎加入MayDOS开发者社区，与我们一起改进这个项目！</p>
+            
+            <a href="https://qm.qq.com/q/XOPbqEEB6Q" class="qq-group ripple">
+                <i class="material-icons" style="vertical-align: middle;">group</i> [QQ-875367997]点击链接加入群聊【🇨🇳MayOS😀Development Community🇨🇳】
+            <a href="https://qm.qq.com/q/GYPk8skwYm" class="qq-group ripple">
+                <i class="material-icons" style="vertical-align: middle;">group</i> [QQ-801195042]点击链接加入群聊【MayOS开发与设计】
+            </a>
+        </div>
+        <div class="card">
+            <h2 id="1" class="section-title">不想开发？没关系，和我们来自天南海北的朋友进行聊天吧</h2>
+            <p>欢迎加入MayDOS闲聊社区，与我们一起谈天说地！</p>
+            
+            <a href="https://qm.qq.com/q/bzXzXRu7HW" class="qq-group ripple">
+                <i class="material-icons" style="vertical-align: middle;">group</i> [QQ-243928950]点击链接加入群聊【Minecraft_2v温馨的小窝】
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 MayDOS Team. 保留所有权利。</p>
+        <p>联系站长：[QQ]2306925195 或者 [WeChat_ID]Minecraft_2v</p>
+    </footer>
+    
+    <script>
+        // 添加点击波纹效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const rippleElements = document.querySelectorAll('.ripple');
+            
+            rippleElements.forEach(element => {
+                element.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const x = e.clientX - e.target.getBoundingClientRect().left;
+                    const y = e.clientY - e.target.getBoundingClientRect().top;
+                    
+                    const ripple = document.createElement('span');
+                    ripple.className = 'ripple-effect';
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                        window.location.href = this.getAttribute('href');
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
 </html>
