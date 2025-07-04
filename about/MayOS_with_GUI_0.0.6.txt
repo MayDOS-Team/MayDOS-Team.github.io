@@ -1,0 +1,13 @@
+MayOS_with_GUI_0.0.6 Stable Release & Bugs Fix
+发布日期: 2025年7月5日00点29分
+注:该版本主要为增加新功能，还包含错误修复
+
+漏洞修复:
+1.修复了由于路径问题导致的MayOS_with_GUI_0.0.5嵌套出现的问题
+
+功能改进:
+！暂无
+
+新功能:
+1.增加了自动从https://maydos-team.github.io/上读取更新日志的功能
+2.增加了自动从https://maydos-team.github.io/上检测更新的功能
